@@ -3,6 +3,7 @@ package io.riders;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 /**
  * Main class for starting Spring Boot Application
  */
