@@ -1,4 +1,4 @@
-package io.riders;
+package io.riders.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

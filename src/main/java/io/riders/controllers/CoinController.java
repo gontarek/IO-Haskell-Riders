@@ -1,4 +1,4 @@
-package io.riders;
+package io.riders.controllers;
 
 import io.riders.models.CoinModel;
 import org.springframework.stereotype.Controller;

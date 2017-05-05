@@ -1,5 +1,6 @@
-package io.riders.models;
+package io.riders.controllers;
 
+import io.riders.models.DiceModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
