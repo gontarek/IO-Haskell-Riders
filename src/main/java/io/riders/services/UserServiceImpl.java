@@ -3,6 +3,8 @@ package io.riders.services;
 import io.riders.models.User;
 import io.riders.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
@@ -11,6 +13,8 @@ import java.util.List;
 /**
  * Created by tommy on 5/5/2017.
  */
+@Service
+@Profile("springdatajpa")
 public class UserServiceImpl implements UserService{
     private UserRepository userRepository;
 
