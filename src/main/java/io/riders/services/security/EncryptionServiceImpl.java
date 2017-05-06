@@ -2,10 +2,12 @@ package io.riders.services.security;
 
 import org.jasypt.util.password.StrongPasswordEncryptor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by tommy on 5/5/2017.
  */
+@Service
 public class EncryptionServiceImpl implements EncryptionService {
     private StrongPasswordEncryptor strongEncryptor;
 

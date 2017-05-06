@@ -9,6 +9,7 @@ import java.util.List;
  */
 @Entity
 public class User extends AbstractModelObject {
+
     private String username;
 
     @Transient

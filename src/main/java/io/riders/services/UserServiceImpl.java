@@ -2,6 +2,7 @@ package io.riders.services;
 
 import io.riders.models.User;
 import io.riders.repositories.UserRepository;
+import io.riders.services.security.EncryptionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
@@ -16,17 +17,26 @@ import java.util.List;
 @Service
 @Profile("springdatajpa")
 public class UserServiceImpl implements UserService{
+
     private UserRepository userRepository;
 
     @Autowired
-    private void setUserRepository(UserRepository userRepository) {
+    public void setUserRepository(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
+
+    private EncryptionService encryptionService;
+
+    @Autowired
+    public void setEncryptionService(EncryptionService encryptionService) {
+        this.encryptionService = encryptionService;
+    }
+
 
     @Override
     public List<?> listAll() {
         List<User> users = new ArrayList<>();
-        userRepository.findAll().forEach(users::add);
+        userRepository.findAll().forEach(users::add); //fun with Java 8
         return users;
     }
 
@@ -37,9 +47,11 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User saveOrUpdate(User domainObject) {
+        if(domainObject.getPassword() != null){
+            domainObject.setEncryptedPassword(encryptionService.encryptString(domainObject.getPassword()));
+        }
         return userRepository.save(domainObject);
     }
-
     @Override
     @Transactional
     public void delete(Integer id) {

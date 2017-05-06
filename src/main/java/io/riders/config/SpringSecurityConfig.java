@@ -18,6 +18,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
  */
 @Configuration
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
+
     private AuthenticationProvider authenticationProvider;
 
     @Autowired
@@ -47,10 +48,11 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
     public void configureAuthManager(AuthenticationManagerBuilder authenticationManagerBuilder){
         authenticationManagerBuilder.authenticationProvider(authenticationProvider);
     }
+
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-                .authorizeRequests().antMatchers("/","/coin","/dice","/console/*","/h2-console/**", "static/*").permitAll()
+                .authorizeRequests().antMatchers("/","/coin","/dice","/console/**","/h2-console/**", "static/*").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").permitAll()
