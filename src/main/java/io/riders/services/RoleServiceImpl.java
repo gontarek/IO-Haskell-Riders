@@ -3,6 +3,8 @@ package io.riders.services;
 import io.riders.models.Role;
 import io.riders.repositories.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +12,8 @@ import java.util.List;
 /**
  * Created by tommy on 5/5/2017.
  */
+@Service
+@Profile("springdatajpa")
 public class RoleServiceImpl implements RoleService{
     private RoleRepository roleRepository;
 
