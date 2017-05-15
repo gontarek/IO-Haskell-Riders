@@ -1,23 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head lang="en">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Welcome</title>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
 </head>
 <body>
-<ul>
-    <li>
-        <a href="#" th:href="@{/coin}">Click to toss a coin!</a>
-    </li>
-    <li>
-        <a href="#" th:href="@{/dice}">Click to throw a dice!</a>
-    </li>
-    <li>
-        <a href="#" th:href="@{/login}">Sign in</a>
-    </li>
-    <li sec:authorize="isAuthenticated()">
-        <a href="#" th:href="@{/logout}">Sign out</a>
-    </li>
-</ul>
+
+<!--/*/ <th:block th:include="fragments/navbar :: navbar"></th:block> /*/-->
+
+<div class="container">
+    Horserand na całego!
+</div>
 </body>
 </html>

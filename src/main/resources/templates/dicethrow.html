@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Dice Throw</title>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous"></script>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
     <script src="../static/js/dicethrow.js" th:src="@{/js/dicethrow.js}"></script>
-    <link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}" media="screen"/>
-    <link rel="shortcut icon" href="../static/images/favicon.ico" th:href="@{/images/favicon.ico}" type="image/x-icon"/>
 </head>
 <body>
+    <!--/*/ <th:block th:include="fragments/navbar :: navbar"></th:block> /*/-->
+
     <header>
         <h3>Kliknij na mnie!</h3>
     </header>
     <div id="dicethrow">
-        <img id="dice" src="../static/images/dice/dice-1.jpg" th:src="@{/images/dice/dice-1.jpg}"/>
+        <img id="dice"
+             src="../static/images/dice/dice-1.jpg"
+             th:src="@{/images/dice/dice-1.jpg}"/>
     </div>
 </body>
 </html>
