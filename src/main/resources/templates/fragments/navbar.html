@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<body>
+<div th:fragment="navbar">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Logo</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a th:href="@{/coin}">CoinToss</a></li>
+                    <li><a th:href="@{/dice}">DiceThrow</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" sec:authorize="!isAuthenticated()">
+                    <li>
+                        <a th:href="@{/login}">
+                            <span class="glyphicon glyphicon-log-in"></span> Login
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right" sec:authorize="isAuthenticated()">
+                    <li>
+                        <a th:href="@{/logout}">
+                            <span class="glyphicon glyphicon-log-in"></span> Sign out
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+</body>
+</html>
