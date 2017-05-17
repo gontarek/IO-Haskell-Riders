@@ -17,6 +17,7 @@
                 <ul class="nav navbar-nav">
                     <li><a th:href="@{/coin}">CoinToss</a></li>
                     <li><a th:href="@{/dice}">DiceThrow</a></li>
+                    <li><a th:href="@{/history}">DiceThrow</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" sec:authorize="!isAuthenticated()">
                     <li>
@@ -29,7 +30,9 @@
                 <ul class="nav navbar-nav navbar-right" sec:authorize="isAuthenticated()">
                     <li>
                         <a th:href="@{/logout}">
-                            <span class="glyphicon glyphicon-log-in"></span> Sign out
+                            <span class="gray" th:text="'User: ' + ${userName} + '     '"/>
+                            <span class="glyphicon glyphicon-log-in"></span>
+                            <span>Sign out</span>
                         </a>
                     </li>
                 </ul>
