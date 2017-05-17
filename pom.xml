@@ -81,6 +81,14 @@
             <artifactId>bootstrap</artifactId>
             <version>3.3.4</version>
         </dependency>
+
+        <!-- very nasty lombok library, use with caution! -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.16</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
