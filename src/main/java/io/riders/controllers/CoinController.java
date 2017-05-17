@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * Controller class for coin page
+ * Controller class for coin model
  */
 @Controller
 public class CoinController {
@@ -18,7 +18,7 @@ public class CoinController {
     }
 
     /**
-     * @return CoinModel initized with random number
+     * @return CoinModel initialized with random number
      */
     @RequestMapping(value = "/coin", method = RequestMethod.POST)
     public

@@ -12,6 +12,10 @@ import java.util.List;
 /**
  * Created by tommy on 5/5/2017.
  */
+
+/**
+ * Service for roles persistence
+ */
 @Service
 @Profile("springdatajpa")
 public class RoleServiceImpl implements RoleService{
@@ -23,6 +27,10 @@ public class RoleServiceImpl implements RoleService{
         this.roleRepository = roleRepository;
     }
 
+    /**
+     * Lists all saved roles
+     * @return
+     */
     @Override
     public List<?> listAll() {
         List<Role> roles = new ArrayList<>();
@@ -30,16 +38,30 @@ public class RoleServiceImpl implements RoleService{
         return roles;
     }
 
+    /**
+     * Finds a role with given id
+     * @param id
+     * @return
+     */
     @Override
     public Role getById(Integer id) {
         return roleRepository.findOne(id);
     }
 
+    /**
+     * Saves given role
+     * @param domainObject
+     * @return
+     */
     @Override
     public Role saveOrUpdate(Role domainObject) {
         return roleRepository.save(domainObject);
     }
 
+    /**
+     * Deletes a role with given id
+     * @param id
+     */
     @Override
     public void delete(Integer id) {
         roleRepository.delete(id);
