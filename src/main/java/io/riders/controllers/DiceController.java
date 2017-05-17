@@ -3,7 +3,9 @@ package io.riders.controllers;
 import io.riders.models.DiceModel;
 import io.riders.models.HistoryEntry;
 import io.riders.services.HistoryService;
+
 import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,33 +17,35 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 @Controller
 public class DiceController {
 
-  private final HistoryService historyService;
+    private final HistoryService historyService;
 
-  @Autowired
-  public DiceController(HistoryService historyService) {
-    this.historyService = historyService;
-  }
-
-  @RequestMapping(value = "/dice", method = RequestMethod.GET)
-  public String coin() {
-    return "dicethrow";
-  }
-
-  @RequestMapping(value = "/dice", method = RequestMethod.POST)
-  public @ResponseBody DiceModel coinToss(
-      @RequestParam(value = "type", required = false, defaultValue = "k6") String diceType,
-      Principal p
-                                         ) {
-
-    if (!"k6".equals(diceType)) {
-      throw new NotImplementedException();
+    @Autowired
+    public DiceController(HistoryService historyService) {
+        this.historyService = historyService;
     }
 
-    DiceModel diceModel = DiceModel.throwDice();
+    @RequestMapping(value = "/dice", method = RequestMethod.GET)
+    public String coin() {
+        return "dicethrow";
+    }
 
-    historyService.saveOrUpdate(new HistoryEntry(p.getName(),
-                                                 "dice roll",
-                                                 String.valueOf(diceModel.getValue())));
-    return diceModel;
-  }
+    @RequestMapping(value = "/dice", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    DiceModel coinToss(
+            @RequestParam(value = "type", required = false, defaultValue = "k6") String diceType,
+            Principal p
+    ) {
+
+        if (!"k6".equals(diceType)) {
+            throw new NotImplementedException();
+        }
+
+        DiceModel diceModel = DiceModel.throwDice();
+
+        historyService.saveOrUpdate(new HistoryEntry(p.getName(),
+                "dice roll",
+                String.valueOf(diceModel.getValue())));
+        return diceModel;
+    }
 }
