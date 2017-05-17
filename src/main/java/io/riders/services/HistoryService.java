@@ -1,5 +1,8 @@
 package io.riders.services;
 
-public class HistoryService {
+import io.riders.models.HistoryEntry;
+import java.util.List;
 
+public interface HistoryService extends CRUDService<HistoryEntry> {
+  List<HistoryEntry> findAllByUser(String username);
 }

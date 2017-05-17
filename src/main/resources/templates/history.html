@@ -10,5 +10,15 @@
 <body>
 <th:block th:include="fragments/navbar :: navbar"/>
 
+
+<div class="container">
+  <table class="table table-striped">
+    <tr th:each="historyEntry : ${entries}">
+      <td th:text="${historyEntry.dateCreated}">Date</td>
+      <td th:text="${historyEntry.drawType}">Type</td>
+      <td th:text="${historyEntry.value}">Value</td>
+    </tr>
+  </table>
+</div>
 </body>
 </html>
