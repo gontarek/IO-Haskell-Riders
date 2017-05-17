@@ -24,6 +24,6 @@ public class CoinController {
     public
     @ResponseBody
     CoinModel coinToss() {
-        return new CoinModel((int) Math.round(Math.random()));
+        return CoinModel.throwCoin();
     }
 }
