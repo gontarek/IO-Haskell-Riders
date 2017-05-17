@@ -7,6 +7,10 @@ import org.springframework.stereotype.Service;
 /**
  * Created by tommy on 5/5/2017.
  */
+
+/**
+ * Service for encrypting passwords
+ */
 @Service
 public class EncryptionServiceImpl implements EncryptionService {
     private StrongPasswordEncryptor strongEncryptor;
@@ -16,10 +20,21 @@ public class EncryptionServiceImpl implements EncryptionService {
         this.strongEncryptor = strongEncryptor;
     }
 
+    /**
+     * Encrypts given String with the use of strong encryption
+     * @param input
+     * @return
+     */
     public String encryptString(String input) {
         return strongEncryptor.encryptPassword(input);
     }
 
+    /**
+     * Checks is plainPasswords corresponds to encryptedPassword
+     * @param plainPassword
+     * @param encryptedPassword
+     * @return
+     */
     public boolean checkPassword(String plainPassword, String encryptedPassword) {
         return strongEncryptor.checkPassword(plainPassword, encryptedPassword);
     }

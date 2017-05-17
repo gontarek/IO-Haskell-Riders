@@ -13,6 +13,10 @@ import org.springframework.stereotype.Service;
 /**
  * Created by tommy on 5/5/2017.
  */
+
+/**
+ * Service for managing users details
+ */
 @Service("userDetailsService")
 public class UserDetailsServiceImpl implements UserDetailsService{
 
@@ -30,6 +34,12 @@ public class UserDetailsServiceImpl implements UserDetailsService{
         this.userUserDetailsConverter = userUserDetailsConverter;
     }
 
+    /**
+     * Finds user with the given id and returns UserDetails of the found user
+     * @param username
+     * @return
+     * @throws UsernameNotFoundException
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return userUserDetailsConverter.convert(userService.findByUsername(username));

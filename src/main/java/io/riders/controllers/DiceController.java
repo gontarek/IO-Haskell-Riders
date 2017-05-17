@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+/**
+ * Controller for dice model
+ */
 @Controller
 public class DiceController {
 
@@ -27,6 +30,11 @@ public class DiceController {
     return "dicethrow";
   }
 
+  /**
+  *
+  * @param diceType
+  * @return DiceModel
+  */    
   @RequestMapping(value = "/dice", method = RequestMethod.POST)
   public @ResponseBody DiceModel coinToss(
       @RequestParam(value = "type", required = false, defaultValue = "k6") String diceType,
