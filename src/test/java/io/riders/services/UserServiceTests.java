@@ -1,9 +1,7 @@
-package io.riders;
+package io.riders.services;
 
 import io.riders.models.User;
 import io.riders.repositories.UserRepository;
-import io.riders.services.UserService;
-import io.riders.services.UserServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

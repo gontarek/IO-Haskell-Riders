@@ -1,4 +1,4 @@
-package io.riders;
+package io.riders.converters;
 
 import io.riders.models.Role;
 import io.riders.models.User;

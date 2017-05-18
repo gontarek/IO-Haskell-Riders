@@ -1,9 +1,7 @@
-package io.riders;
+package io.riders.services;
 
 import io.riders.models.HistoryEntry;
 import io.riders.repositories.HistoryRepository;
-import io.riders.services.HistoryService;
-import io.riders.services.HistoryServiceImplementation;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
