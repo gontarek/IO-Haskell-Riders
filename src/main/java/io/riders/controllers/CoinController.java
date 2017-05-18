@@ -2,7 +2,6 @@ package io.riders.controllers;
 
 import io.riders.models.CoinModel;
 import io.riders.models.HistoryEntry;
-import io.riders.models.User;
 import io.riders.services.HistoryService;
 import java.security.Principal;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * Controller class for coin page
+ * Controller class for coin model
  */
 @Controller
 public class CoinController {
@@ -31,13 +30,13 @@ public class CoinController {
     }
 
     /**
-     * @return CoinModel initized with random number
+     * @return CoinModel initialized with random number
      */
     @RequestMapping(value = "/coin", method = RequestMethod.POST)
     public
     @ResponseBody
     CoinModel coinToss(Principal p) {
-        CoinModel coinModel = new CoinModel((int) Math.round(Math.random()));
+        CoinModel coinModel = CoinModel.throwCoin();
 
         historyService.saveOrUpdate(new HistoryEntry(p.getName(),
                                                      "coin toss",

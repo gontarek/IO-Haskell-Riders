@@ -3,8 +3,12 @@ package io.riders.models;
 public class CoinModel {
     private final int value;
 
-    public CoinModel(int value) {
-        this.value = value;
+    private CoinModel() {
+        this.value = (int) Math.round(Math.random());
+    }
+
+    public static CoinModel throwCoin(){
+        return new CoinModel();
     }
 
     public int getValue() {
