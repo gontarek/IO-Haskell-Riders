@@ -10,7 +10,6 @@ public class DiceModel {
         return new DiceModel(randomNum);
     }
 
-
     private DiceModel(int value) {
         this.value = value;
     }

@@ -2,6 +2,7 @@ package io.riders.bootstrap;
 
 import io.riders.models.Role;
 import io.riders.models.User;
+import io.riders.services.HistoryService;
 import io.riders.services.RoleService;
 import io.riders.services.UserService;
 import org.apache.log4j.Logger;

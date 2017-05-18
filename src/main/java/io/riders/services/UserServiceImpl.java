@@ -14,6 +14,10 @@ import java.util.List;
 /**
  * Created by tommy on 5/5/2017.
  */
+
+/**
+ * Service users persistence
+ */
 @Service
 @Profile("springdatajpa")
 public class UserServiceImpl implements UserService{
@@ -32,7 +36,10 @@ public class UserServiceImpl implements UserService{
         this.encryptionService = encryptionService;
     }
 
-
+    /**
+     * Lists all saved users
+     * @return
+     */
     @Override
     public List<?> listAll() {
         List<User> users = new ArrayList<>();
@@ -40,11 +47,21 @@ public class UserServiceImpl implements UserService{
         return users;
     }
 
+    /**
+     * Finds a user with given id
+     * @param id
+     * @return
+     */
     @Override
     public User getById(Integer id) {
         return userRepository.findOne(id);
     }
 
+    /**
+     * Saves given user
+     * @param domainObject
+     * @return
+     */
     @Override
     public User saveOrUpdate(User domainObject) {
         if(domainObject.getPassword() != null){
@@ -52,12 +69,22 @@ public class UserServiceImpl implements UserService{
         }
         return userRepository.save(domainObject);
     }
+
+    /**
+     * Deletes a user with given id
+     * @param id
+     */
     @Override
     @Transactional
     public void delete(Integer id) {
         userRepository.delete(id);
     }
 
+    /**
+     * Finds a user with given name
+     * @param username
+     * @return
+     */
     @Override
     public User findByUsername(String username) {
         return userRepository.findByUsername(username);
