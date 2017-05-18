@@ -2,7 +2,6 @@ package io.riders.controllers;
 
 import io.riders.models.CoinModel;
 import io.riders.models.HistoryEntry;
-import io.riders.models.User;
 import io.riders.services.HistoryService;
 import java.security.Principal;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +36,7 @@ public class CoinController {
     public
     @ResponseBody
     CoinModel coinToss(Principal p) {
-        CoinModel coinModel = new CoinModel((int) Math.round(Math.random()));
+        CoinModel coinModel = CoinModel.throwCoin();
 
         historyService.saveOrUpdate(new HistoryEntry(p.getName(),
                                                      "coin toss",
