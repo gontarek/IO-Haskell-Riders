@@ -10,7 +10,7 @@ import java.util.Random;
  */
 public class SequenceModel {
     private List<Integer> sequence = new ArrayList<>();
-    public SequenceModel(Integer lenght){
+    public SequenceModel(int lenght){
         for (int i = 0; i < lenght; i++) {
             sequence.set(i,i);
         }

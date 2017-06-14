@@ -14,7 +14,7 @@ import java.security.Principal;
 @Controller
 public class SequenceController {
     @RequestMapping("/sequence")
-    public @ResponseBody SequenceModel sequence(@RequestParam(value = "length", required = false, defaultValue = "10") Integer length){
+    public @ResponseBody SequenceModel sequence(@RequestParam(value = "length", required = false, defaultValue = "10") int length){
         return new SequenceModel(length);
     }
 }
