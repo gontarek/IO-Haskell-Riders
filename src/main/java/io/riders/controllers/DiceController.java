@@ -40,8 +40,7 @@ public class DiceController {
   @RequestMapping(value = "/dice", method = RequestMethod.POST)
   public @ResponseBody DiceModel coinToss(
       @RequestParam(value = "type", required = false, defaultValue = "k6") String diceType,
-      Principal p
-                                         ) {
+      Principal p) {
 
         if (!"k6".equals(diceType)) {
             throw new NotImplementedException();

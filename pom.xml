@@ -64,7 +64,7 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
-            <version>4.0.0.RELEASE</version>
+            <version>5.0.0.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
@@ -136,5 +136,14 @@
             </plugin>
         </plugins>
     </reporting>
-
+    <repositories>
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/libs-snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>
