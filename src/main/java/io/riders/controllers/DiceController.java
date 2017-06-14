@@ -20,12 +20,8 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 @Controller
 public class DiceController {
 
-    private final HistoryService historyService;
-
     @Autowired
-    public DiceController(HistoryService historyService) {
-        this.historyService = historyService;
-    }
+    private HistoryService historyService;
 
     @RequestMapping(value = "/dice", method = RequestMethod.GET)
     public String coin() {

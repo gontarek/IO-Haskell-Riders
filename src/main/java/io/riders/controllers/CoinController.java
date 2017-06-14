@@ -16,13 +16,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class CoinController {
 
-    private final HistoryService historyService;
-
     @Autowired
-    public CoinController(HistoryService historyService) {
-        this.historyService = historyService;
-    }
-
+    private HistoryService historyService;
 
     @RequestMapping(value = "/coin", method = RequestMethod.GET)
     public String coin() {
