@@ -1,13 +1,10 @@
 /**
  * Created by mruga on 11.06.2017.
  */
-$(function() {
-    $('#dice').on('click', function() {
+$(document).ready(function() {
         $.ajax({
-            url: 'sequence',
-            type: 'POST'
+            url: 'sequence'
         }).done(function(data) {
             $('#seq').text(data)
         });
-    });
 });
