@@ -7,15 +7,22 @@
     <script src="../static/js/dicethrow.js" th:src="@{/js/dicethrow.js}"></script>
 </head>
 <body>
-    <!--/*/ <th:block th:include="fragments/navbar :: navbar"></th:block> /*/-->
+<!--/*/ <th:block th:include="fragments/navbar :: navbar"></th:block> /*/-->
 
-    <header>
-        <h3>Kliknij na mnie!</h3>
-    </header>
-    <div id="dicethrow">
-        <img id="dice"
-             src="../static/images/dice/dice-1.jpg"
-             th:src="@{/images/dice/dice-1.jpg}"/>
+<div id="cointoss" class="container">
+    <div class="col-xs-12">
+        <div class="row">
+            <p id="message" class="text-center">Throw the dice!</p>
+        </div>
+        <div id="dicethrow" class="row text-center">
+            <img id="dice"
+                 src="../static/images/dice/dice-1.jpg"
+                 th:src="@{/images/dice/dice-1.jpg}"/>
+        </div>
+        <div class="row text-center">
+            <button id="button" type="button" class="btn btn-primary">Throw the dice</button>
+        </div>
     </div>
+</div>
 </body>
 </html>

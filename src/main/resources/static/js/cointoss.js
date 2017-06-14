@@ -1,5 +1,5 @@
 $(function() {
-    $('#coin').on('click', function() {
+    $('#button').on('click', function() {
         $.ajax({
             url: 'coin',
             type: 'POST'
@@ -9,6 +9,7 @@ $(function() {
             } else {
                 $('#coin').attr('src', '../images/50-groszy-rewers.jpg');
             }
+            $('#message').text("Congratulations! You've tossed the coin.");
         });
     });
 });

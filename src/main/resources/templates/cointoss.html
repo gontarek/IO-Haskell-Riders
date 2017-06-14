@@ -9,15 +9,21 @@
 </head>
 
 <body>
-    <!--/*/ <th:block th:include="fragments/navbar :: navbar"></th:block> /*/-->
-
-    <header>
-        <h3>Kliknij na mnie!</h3>
-    </header>
-    <div id="cointoss">
-        <img id="coin" src="../static/images/50-groszy-awers.jpg"
-             th:src="@{images/50-groszy-awers.jpg}"/>
+<!--/*/ <th:block th:include="fragments/navbar :: navbar"></th:block> /*/-->
+<div id="cointoss" class="container">
+    <div class="col-xs-12">
+        <div class="row">
+            <p id="message" class="text-center">Toss the coin!</p>
+        </div>
+        <div class="row text-center">
+            <img id="coin" src="../static/images/50-groszy-awers.jpg"
+                 th:src="@{images/50-groszy-awers.jpg}"/>
+        </div>
+        <div class="row text-center">
+            <button id="button" type="button" class="btn btn-primary">Toss the coin</button>
+        </div>
     </div>
+</div>
 
 </body>
 </html>
