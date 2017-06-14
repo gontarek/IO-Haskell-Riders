@@ -48,6 +48,8 @@ public class RoleServiceImpl implements RoleService{
         return roleRepository.findOne(id);
     }
 
+    public Role findByRole(String role) {return roleRepository.findByRole(role);}
+
     /**
      * Saves given role
      * @param domainObject
