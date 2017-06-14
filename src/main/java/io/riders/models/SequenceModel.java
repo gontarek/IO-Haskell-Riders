@@ -10,12 +10,14 @@ import java.util.Random;
  */
 public class SequenceModel {
     private List<Integer> sequence = new ArrayList<>();
-    public SequenceModel(int lenght){
-        for (int i = 0; i < lenght; i++) {
-            sequence.set(i,i);
+
+    public SequenceModel(int length){
+        for (int i = 0; i < length; i++) {
+            sequence.add(i,i);
         }
         Collections.shuffle(sequence, new Random(5));
     }
+
     public List<Integer> getValue(){
         return sequence;
     }

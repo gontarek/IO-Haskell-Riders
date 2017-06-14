@@ -2,10 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
     <title>Sequence</title>
+
     <th:block th:include="fragments/headerinc :: head"/>
+    <script src="../static/js/sequence.js" th:src="@{/js/sequence.js}"></script>
 </head>
 <body>
-    <th:block th:include="fragments/navbar :: navbar"></th:block>
+    <!--/*/<th:block th:include="fragments/navbar :: navbar"></th:block>/*/-->
+
     No siema - test 1
     <button id="load_seqence">Giv me seq</button>
     <div id="seq"></div>
