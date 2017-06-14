@@ -4,14 +4,13 @@
     <title>Sequence</title>
 
     <th:block th:include="fragments/headerinc :: head"/>
-    <script src="../static/js/sequence.js" th:src="@{/js/sequence.js}"></script>
+    <script src="../static/js/lotto.js" th:src="@{/js/lotto.js}"></script>
 </head>
 <body>
     <!--/*/<th:block th:include="fragments/navbar :: navbar"></th:block>/*/-->
-
     <div class="container">
-        <button class="btn" onclick="load_sequence()">Giv me seq</button>
-        <div id="seq"></div>
+        <button class="btn" onclick="load_lotto()">Giv me lotto</button>
+        <div id="lotto"></div>
     </div>
 </body>
 </html>

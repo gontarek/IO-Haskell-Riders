@@ -3,11 +3,10 @@
  */
 function load_sequence(){
     $.ajax({
-        url: 'sequence',
-        method: 'POST'
+        url: '/sequence',
+        method : 'POST'
     }).done(function(data) {
-        console.log(data);
-        $('#seq').text(data)
+        $('#seq').text(JSON.stringify(data["value"]))
     });
 }
 $(document).ready(function() {
@@ -16,4 +15,5 @@ $(document).ready(function() {
 
 $('#load_sequence').click(function () {
     load_sequence();
+    return true;
 });

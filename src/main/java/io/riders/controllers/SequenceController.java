@@ -22,8 +22,7 @@ public class SequenceController {
         return "sequence";
     }
 
-    @RequestMapping(value = "/sequence",
-                    method = RequestMethod.POST)
+    @RequestMapping(value = "/sequence", method = RequestMethod.POST)
     public @ResponseBody SequenceModel sequence(@RequestParam(value = "length",
                                                               required = false,
                                                               defaultValue = "10") int length) {
