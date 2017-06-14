@@ -7,7 +7,8 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * Created by mruga on 11.06.2017.
+ * Model for random sequence of numbers
+ * example sequence: [6,3,2,5,4,1]
  */
 public class SequenceModel {
     private List<Integer> sequence = new ArrayList<>();

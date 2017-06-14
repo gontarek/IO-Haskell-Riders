@@ -2,6 +2,9 @@ package io.riders.models;
 
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * Model for a random dice throw
+ */
 public class DiceModel {
     private final int value;
 

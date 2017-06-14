@@ -7,7 +7,7 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * Created by mruga on 14.06.2017.
+ * Model for random Lotto series (6 digits 1 through 49)
  */
 public class LottoModel {
     private List<Integer> lotto_numbers = new ArrayList<>();

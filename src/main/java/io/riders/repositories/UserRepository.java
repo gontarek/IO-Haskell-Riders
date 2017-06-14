@@ -4,8 +4,14 @@ import io.riders.models.User;
 import org.springframework.data.repository.CrudRepository;
 
 /**
- * Created by tommy on 5/5/2017.
+ * Repository for users
  */
 public interface UserRepository extends CrudRepository<User, Integer>{
+
+    /**
+     * Finds a user in the database by username (username is unique in db)
+     * @param username self-descriptory
+     * @return User with given username
+     */
     User findByUsername(String username);
 }

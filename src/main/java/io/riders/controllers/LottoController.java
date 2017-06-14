@@ -9,16 +9,24 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * Created by mruga on 14.06.2017.
+ * Controller for random Lotto numbers
  */
 @Controller
 public class LottoController {
 
+    /**
+     * Rendering lotto view
+     * @return view name as string
+     */
     @RequestMapping("/lotto")
     public String lotto() {
         return "lotto";
     }
 
+    /**
+     * Api endpoint for returning the Lotto numbers as json
+     * @return Lotto model rendered to JSON
+     */
     @RequestMapping(value = "/api/lotto", method = RequestMethod.POST)
     public @ResponseBody
     LottoModel lottoApi() {
