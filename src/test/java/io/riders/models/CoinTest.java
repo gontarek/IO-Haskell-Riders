@@ -1,4 +1,4 @@
-package io.riders;
+package io.riders.models;
 
 import io.riders.models.CoinModel;
 import org.junit.Test;

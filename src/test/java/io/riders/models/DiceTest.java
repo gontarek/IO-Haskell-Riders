@@ -1,4 +1,4 @@
-package io.riders;
+package io.riders.models;
 
 import io.riders.models.DiceModel;
 import org.junit.Before;
