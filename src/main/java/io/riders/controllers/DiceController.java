@@ -34,10 +34,10 @@ public class DiceController {
   * @return DiceModel
   */    
   @RequestMapping(value = "/dice", method = RequestMethod.POST)
-  public @ResponseBody DiceModel coinToss(
-      @RequestParam(value = "type", required = false, defaultValue = "k6") String diceType,
-      Principal p
-                                         ) {
+  public @ResponseBody DiceModel coinToss(@RequestParam(value = "type",
+                                                        required = false,
+                                                        defaultValue = "k6") String diceType,
+                                          Principal p) {
 
         if (!"k6".equals(diceType)) {
             throw new NotImplementedException();

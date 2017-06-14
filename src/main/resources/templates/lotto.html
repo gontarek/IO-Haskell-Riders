@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Sequence</title>
+
+    <th:block th:include="fragments/headerinc :: head"/>
+    <script src="../static/js/lotto.js" th:src="@{/js/lotto.js}"></script>
+</head>
+<body>
+    <!--/*/<th:block th:include="fragments/navbar :: navbar"></th:block>/*/-->
+    <div class="container">
+        <button class="btn" onclick="load_lotto()">Giv me lotto</button>
+        <div id="lotto"></div>
+    </div>
+</body>
+</html>

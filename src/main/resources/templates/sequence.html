@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Sequence</title>
+
+    <th:block th:include="fragments/headerinc :: head"/>
+    <script src="../static/js/sequence.js" th:src="@{/js/sequence.js}"></script>
+</head>
+<body>
+    <!--/*/<th:block th:include="fragments/navbar :: navbar"></th:block>/*/-->
+
+    <div class="container">
+        <button class="btn" onclick="load_sequence()">Giv me seq</button>
+        <div id="seq"></div>
+    </div>
+</body>
+</html>
