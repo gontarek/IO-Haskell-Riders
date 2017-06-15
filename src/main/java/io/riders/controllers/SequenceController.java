@@ -17,11 +17,21 @@ import java.security.Principal;
 @Controller
 public class SequenceController {
 
+    /**
+     * Rendering the sequence view
+     * @return sequence view name as string
+     */
     @RequestMapping("/sequence")
     public String sequence() {
         return "sequence";
     }
 
+    /**
+     * Api endpoint responsible for random numbers sequence
+     * @param length Request Query Parameter with string encoded integer
+     *        which determines the sequence length
+     * @return Sequence model encoded as JSON
+     */
     @RequestMapping(value = "/sequence", method = RequestMethod.POST)
     public @ResponseBody SequenceModel sequence(@RequestParam(value = "length",
                                                               required = false,

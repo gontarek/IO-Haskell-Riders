@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by tommy on 5/5/2017.
+ * Base for all Hibernate entities which encloses insert/update dates and id with generation
  */
 @MappedSuperclass
 @Getter

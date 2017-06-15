@@ -9,6 +9,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Hibernate database entity for one of the events on the page
+ */
 @Entity
 @Getter
 @Setter

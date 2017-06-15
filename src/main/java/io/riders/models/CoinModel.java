@@ -1,5 +1,8 @@
 package io.riders.models;
 
+/**
+ * Model for dice throw
+ */
 public class CoinModel {
     private final int value;
 

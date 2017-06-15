@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * Created by tommy on 5/5/2017.
+ * Hibernate entity which denotes a user in the database
  */
 @Entity
 @Getter
