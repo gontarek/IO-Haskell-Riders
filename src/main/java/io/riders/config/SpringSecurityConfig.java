@@ -13,12 +13,14 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
+
 /**
  * Created by tommy on 5/5/2017.
  */
 @Configuration
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 
+    @Autowired
     private AuthenticationProvider authenticationProvider;
 
     @Autowired
